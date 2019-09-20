@@ -28,7 +28,9 @@ class CollectionsTest {
         // TODO: you could ONLY use `Iterator.hasNext` and `Iterator.next` API to copy items to a `List`. No `for` is
         // allowed.
         // <--start
-
+        while (iterator.hasNext()){
+            list.add(iterator.next());
+        }
         // --end-->
 
         return list;
@@ -37,7 +39,8 @@ class CollectionsTest {
     @Test
     void should_create_a_sequence_without_putting_all_items_into_memory() {
         Sequence sequence = new Sequence(4, 10);
-        assertIterableEquals(Arrays.asList(4, 5, 6, 7, 8, 9), sequence);
+        assertIterableEquals(Arrays.asList(4, 5, 6, 7, 8, 9),
+                sequence);
     }
 
     @Test
@@ -56,7 +59,7 @@ class CollectionsTest {
 
         // TODO: please modify the following code to pass the test
         // <--start
-        final List<String> expected = Arrays.asList("I", "Don't", "Know");
+        final List<String> expected = Arrays.asList("Amy","Bob","Carl");
         // --end-->
 
         assertIterableEquals(expected, staff);
@@ -88,7 +91,7 @@ class CollectionsTest {
 
         // TODO: please modify the following code to pass the test
         // <--start
-        final List<Integer> expected = Arrays.asList(0, 0, 0);
+        final List<Integer> expected = Arrays.asList(0, 1, 2, 10, 11);
         // --end-->
 
         assertIterableEquals(expected, integers);
